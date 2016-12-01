@@ -293,7 +293,7 @@ class LightOpenID
                     'header' => 'Accept: application/xrds+xml, */*',
                     'ignore_errors' => true,
                 ), 'ssl' => array(
-                    'CN_match' => parse_url($url, PHP_URL_HOST),
+                    'peer_name' => parse_url($url, PHP_URL_HOST),
                 ),
             );
             $url = $url . ($params ? '?' . $params : '');
@@ -309,7 +309,7 @@ class LightOpenID
                     'content' => $params,
                     'ignore_errors' => true,
                 ), 'ssl' => array(
-                    'CN_match' => parse_url($url, PHP_URL_HOST),
+                    'peer_name' => parse_url($url, PHP_URL_HOST),
                 ),
             );
             if (!empty($this->proxy)) {
@@ -333,7 +333,7 @@ class LightOpenID
                 'ignore_errors' => false
             );
             $default['ssl'] += array(
-                'CN_match' => ''
+                'peer_name' => ''
             );
             
             $opts = array(
@@ -343,7 +343,7 @@ class LightOpenID
                     'ignore_errors' => true,
                 ),
                 'ssl' => array(
-                    'CN_match' => parse_url($url, PHP_URL_HOST)
+                    'peer_name' => parse_url($url, PHP_URL_HOST)
                 )
             );
             
