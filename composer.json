@@ -20,5 +20,10 @@
 	},
 	"autoload": {
 		"classmap": ["openid.php", "provider/provider.php"]
-	}
+	},
+	"extra": {
+        "branch-alias": {
+        	"dev-master": "1.1.x-dev"
+       	}
+    }
 }
